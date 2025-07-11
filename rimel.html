@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    <style>
+        body { font-family: sans-serif; background: #222; color: white; padding: 20px; }
+        .balance { font-size: 24px; margin-bottom: 20px; }
+        .button { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .deposit-btn { background-color: #28a745; color: white; }
+        .withdraw-btn { background-color: #dc3545; color: white; }
+        .modal { /* Hidden by default */ }
+    </style>
+</head>
+<body>
+    <h2>Welcome, User!</h2>
+    <div class="balance">Your Balance: $<span id="balance">0.00</span></div>
+    <button class="button deposit-btn" onclick="showDepositModal()">Deposit</button>
+    <button class="button withdraw-btn">Withdraw</button>
+
+    <!-- Deposit Modal (Initially hidden) -->
+    <div id="deposit-modal" class="modal" style="display:none; background: #333; padding: 20px; margin-top: 20px;">
+        <h3>Deposit USDT (TRC20)</h3>
+        <p>Send funds to the address below:</p>
+        <code id="deposit-address">TJxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>
+        <p><small>Warning: This is a dummy address. Do not send funds here.</small></p>
+    </div>
+
+    <script>
+        function showDepositModal() {
+            // In a real app, you would make an API call to your backend to get a unique address.
+            // const backendResponse = await fetch('/api/get-deposit-address');
+            // const data = await backendResponse.json();
+            // document.getElementById('deposit-address').innerText = data.address;
+
+            document.getElementById('deposit-modal').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
